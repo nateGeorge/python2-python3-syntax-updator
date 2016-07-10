@@ -19,19 +19,19 @@ else:
 
 changedLine = False
 for file in files:
-    with open(file, 'r') as rFile:
+    print('updating:', file)
+    with open(file, 'r', encoding = 'ISO-8859-1') as rFile:
         lines = rFile.readlines()
         newLines = []
         newLines.append('from __future__ import print_function\n')
         for line in lines:
-            result = re.search(u'^print\s+(.+)', line)
+            result = re.search(u'([\s*#*]*)print\s+(.+)', line)
             if result is not None:
-                newLine = 'print(' + result.group(1) + ')'
+                newLine = result.group(1) + 'print(' + result.group(2) + ')'
                 newLines.append(newLine)
                 changedLine = True
             else:
                 newLines.append(line)
-    print(newLines)
     if changedLine == True:
         with open(file, 'w') as wFile:
             wFile.writelines(newLines)
