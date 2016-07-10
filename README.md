@@ -13,6 +13,6 @@ To double-check everything has been changed, one could run:
 `grep -rnw '.' -e "print "` in a linux terminal.
 
 # Alternatives
-To fix up files in ways of more than just the 'print' function, run
+To fix up files in more ways than just the 'print' function, run
 `2to3 -n -w .`
 in the directory of a python project.
