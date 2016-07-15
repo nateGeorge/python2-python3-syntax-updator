@@ -1,5 +1,7 @@
 # python2-python3-syntax-updator
-This takes a python2 module and automatically makes it python3 compatible.
+Takes a python2 module and automatically makes it python3 compatible.
+
+This function already exists with `2to3 -w your_python_file.py.`  This repository was just for giggles.
 
 # Usage
 `python update_print.py`
